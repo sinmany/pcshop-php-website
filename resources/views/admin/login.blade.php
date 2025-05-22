@@ -21,11 +21,11 @@
                     <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 text-center bg-blue-600">Sign in</button>
                 </form>
                 <div class="flex justify-between">
-                    <p class="text-sm font-light text-gray-5000">
+                    <!-- <p class="text-sm font-light text-gray-5000">
                         Don't have an account yet?
                         <a href="{{ route('admin.register') }}" class="font-medium text-primary-600 no-underline hover:underline">Sign up</a>
-                    </p>
-                    <a href="{{url('/home')}}" class="me-1 font-medium">Back</a>
+                    </p> -->
+                    <a href="{{url('/')}}" class="me-1 font-medium">Back</a>
                 </div>
             </div>
         </div>

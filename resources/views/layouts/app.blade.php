@@ -145,8 +145,6 @@
         </div>
         </div>
 
-
-
         <nav class="bg-slate-800 py-3 ">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto container">
                 <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
@@ -183,17 +181,17 @@
                             <li>
                                 @auth
                                 @if(Auth::user()->role == 'admin')
-                                <a href="{{ url('/admin') }}" class="block px-4 py-2 no-underline">Admin</a>
+                                <a href="{{ url('/admin') }}" class="block px-4 no-underline">Admin</a>
                                 @else
-                                <a href="{{ url('/admin/login') }}" class="block px-4 py-2 no-underline">Admin</a>
+                                <a href="{{ url('/admin/login') }}" class="block px-4 no-underline">Admin</a>
                                 @endif
                                 @else
-                                <a href="{{ url('/admin/login') }}" class="block px-4 py-2 no-underline">Admin</a>
+                                <a href="{{ url('/admin/login') }}" class="block px-4 no-underline">Admin</a>
                                 @endauth
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="{{ url('/login') }}" class="block px-4 py-2 no-underline font-bold">User</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>

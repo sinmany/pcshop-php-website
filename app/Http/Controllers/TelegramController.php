@@ -11,26 +11,27 @@ class TelegramController extends Controller
         $token = env('TELEGRAM_BOT_TOKEN');
         $chat_id = env('CHAT_ID');
 
-        // message to telegram bot
-        $message = "New Ordered\n";
-        $message .= "--------------------------------------------------------\n";
-        $message .= "- Name: " . $request->name . "\n";
-        $message .= "- Description: " . $request->description . "\n";
-        $message .= "- Price: $" . $request->price . "\n";
-        $message .= "- Image URL: " . $request->image;
+        // 📝 Compose the message
+        $message = "🛒 <b>New Order</b>\n";
+        $message .= "------------------------------\n";
+        $message .= "📦 <b>Product:</b> " . $request->name . "\n";
+        $message .= "📝 <b>Description:</b> " . $request->description . "\n";
+        $message .= "💵 <b>Price:</b> $" . $request->price . "\n";
+        $message .= "🖼️ <b>Image:</b> " . $request->image . "\n\n";
+        $message .= "👤 <b>Customer:</b> " . $request->customer_name . "\n";
+        $message .= "📞 <b>Phone:</b> " . $request->phone_number;
 
-
-        // Send the message to Telegram
+        // 🔗 Send message to Telegram
         $url = "https://api.telegram.org/bot$token/sendMessage";
 
         $data = [
             'chat_id' => $chat_id,
             'text' => $message,
-            'parse_mode' => 'HTML'
+            'parse_mode' => 'HTML',
         ];
 
         file_get_contents($url . '?' . http_build_query($data));
 
-        return redirect()->back()->with('success', 'Order sent to Telegram!');
+        return redirect()->back()->with('success', 'Your order successfully sent! We will contact you as soon as posible, Thanks!');
     }
 }

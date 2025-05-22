@@ -20,7 +20,7 @@ Route::get('/admin/login', function () {
     return view('admin.login');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('frontend.home');
 });
 
